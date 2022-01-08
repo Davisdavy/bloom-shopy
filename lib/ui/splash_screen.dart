@@ -40,20 +40,29 @@ class SplashScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context, PageTransition(
-                          child: const LoginScreen(), type: PageTransitionType
-                          .rightToLeft));
-                    },
-                    child: const Text(
-                      "SIGN IN ",
-                      style: TextStyle(
-                          color: whiteThemeColor,
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.bold),
+
+                     Material(
+                       color: Colors.white.withOpacity(0.0),
+                       child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, PageTransition(
+                              child: const LoginScreen(), type: PageTransitionType
+                              .rightToLeft));
+                        },
+                        child: const CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.transparent,
+                          child:  Text(
+                            "SIGN IN ",
+                            style: TextStyle(
+                                color: whiteThemeColor,
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                     ),
-                  ),
+                     ),
+
                   const Icon(
                     Icons.arrow_forward_ios,
                     color: whiteThemeColor,

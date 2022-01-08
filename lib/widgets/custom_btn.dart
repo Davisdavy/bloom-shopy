@@ -19,7 +19,7 @@ class CustomBtn extends StatelessWidget {
     bool _isLoading = isLoading ?? false;
     bool _isIcon = isIcon ?? false;
 
-    return GestureDetector(
+    return InkWell(
       onTap: onPressed,
       child: Container(
         height: 55.0,

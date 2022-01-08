@@ -38,6 +38,7 @@ dependencies:
   font_awesome_flutter:
   page_transition:
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

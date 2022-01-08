@@ -1,8 +1,10 @@
 import 'package:bloom/preferences/colors.dart';
+import 'package:bloom/widgets/bottom_navigation.dart';
 import 'package:bloom/widgets/custom_btn.dart';
 import 'package:bloom/widgets/custom_input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -48,16 +50,23 @@ class _LoginScreenState extends State<LoginScreen> {
                             size: 13.0,
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Text(
-                            "BACK",
-                            style: TextStyle(
-                                color: whiteThemeColor,
-                                fontSize: 13.0,
-                                fontWeight: FontWeight.bold),
+                        Material(
+                          color: Colors.white.withOpacity(0.0),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              radius: 30,
+                              child:  Text(
+                                "BACK",
+                                style: TextStyle(
+                                    color: whiteThemeColor,
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -137,10 +146,14 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 10.0,
             ),
-            const CustomBtn(
+             CustomBtn(
               text: "SIGN IN",
               textColor: whiteThemeColor,
               color: black,
+               onPressed: () {
+                 Navigator.pushReplacement(context, PageTransition(
+                     child: const NavScreen(), type: PageTransitionType.fade));
+               },
             ),
             Container(
               height: 55.0,

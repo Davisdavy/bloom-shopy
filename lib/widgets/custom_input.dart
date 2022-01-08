@@ -1,9 +1,12 @@
 
 import 'package:bloom/preferences/colors.dart';
+import 'package:bloom/ui/reset_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CustomInput extends StatelessWidget {
   final String? labelText;
+  final VoidCallback? callback;
   final String? forgotText;
   final Function(String)? onChanged;
   final Function(String)? onSubmitted;
@@ -11,7 +14,7 @@ class CustomInput extends StatelessWidget {
   final TextInputAction? textInputAction;
   final bool? isPasswordField;
 
-   const CustomInput({Key? key, this.labelText,this.forgotText, this.onChanged, this.onSubmitted, this.focusNode, this.textInputAction, this.isPasswordField}) : super(key: key);
+   const CustomInput({Key? key, this.callback, this.labelText,this.forgotText, this.onChanged, this.onSubmitted, this.focusNode, this.textInputAction, this.isPasswordField}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,13 @@ class CustomInput extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(labelText ?? "Label", style: const TextStyle(fontWeight: FontWeight.w500),),
-              Text(forgotText ?? "", style: const TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),)
+              InkWell(
+                  onTap: (){
+                    Navigator.push(context, PageTransition(
+                        child: const ResetScreen(), type: PageTransitionType
+                        .topToBottom));
+                  },
+                  child: Text(forgotText ?? "", style: const TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),))
             ],
           ),
             labelStyle: const TextStyle(color: grey, fontSize: 17),
