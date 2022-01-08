@@ -1,10 +1,14 @@
 import 'package:bloom/preferences/colors.dart';
+import 'package:bloom/ui/login_screen.dart';
+import 'package:bloom/ui/register_screen.dart';
 import 'package:bloom/widgets/custom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,26 +25,39 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
             ),
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height / 15,
+            top: MediaQuery
+                .of(context)
+                .size
+                .height / 15,
             right: 0.0,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
-                children: const [
-                  Text(
-                    "SIGN IN ",
-                    style: TextStyle(
-                        color: whiteThemeColor,
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold),
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, PageTransition(
+                          child: const LoginScreen(), type: PageTransitionType
+                          .rightToLeft));
+                    },
+                    child: const Text(
+                      "SIGN IN ",
+                      style: TextStyle(
+                          color: whiteThemeColor,
+                          fontSize: 13.0,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios,
                     color: whiteThemeColor,
-                    size: 16.0,
+                    size: 13.0,
                   )
                 ],
               ),
@@ -49,7 +66,7 @@ class SplashScreen extends StatelessWidget {
           Positioned(
             bottom: 220.0,
             child: Padding(
-              padding: const EdgeInsets.symmetric( horizontal: 38.0),
+              padding: const EdgeInsets.symmetric(horizontal: 38.0),
               child: Column(
                 children: const [
                   Align(
@@ -77,7 +94,7 @@ class SplashScreen extends StatelessWidget {
           Positioned(
               bottom: 215,
               child: Padding(
-                padding: const EdgeInsets.symmetric( horizontal: 38.0),
+                padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: Column(
                   children: [
                     Container(
@@ -88,22 +105,29 @@ class SplashScreen extends StatelessWidget {
                   ],
                 ),
               )),
-          const Positioned(
+           Positioned(
               bottom: 135,
               child: Padding(
-                padding:  EdgeInsets.symmetric( horizontal: 38.0),
+                padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: CustomBtn(
                   text: "SIGN UP WITH EMAIL",
-                  onPressed: ,
+                  color: whiteThemeColor,
+                  onPressed: () {
+                    Navigator.push(context, PageTransition(
+                        child: const RegisterScreen(), type: PageTransitionType
+                        .leftToRight));
+                  },
                 ),
               )
           ),
-           const Positioned(
+          const Positioned(
               bottom: 65,
               child: Padding(
-                padding:  EdgeInsets.symmetric( horizontal: 38.0),
+                padding: EdgeInsets.symmetric(horizontal: 38.0),
                 child: CustomBtn(
                   text: "CONTINUE WITH INSTAGRAM",
+                  isIcon: true,
+                  icon: FontAwesomeIcons.instagram,
                   outlineBtn: true,
                 ),
               )

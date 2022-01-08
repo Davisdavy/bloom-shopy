@@ -7,12 +7,17 @@ class CustomBtn extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool? outlineBtn;
   final bool? isLoading;
-    const CustomBtn({Key? key, this.text, this.onPressed, this.outlineBtn, this.isLoading,}) : super(key: key);
+  final Color? color;
+  final Color? textColor;
+  final IconData? icon;
+  final bool? isIcon;
+    const CustomBtn({Key? key, this.text, this.color, this.icon, this.isIcon, this.textColor, this.onPressed, this.outlineBtn, this.isLoading,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     bool _outlineBtn = outlineBtn ?? false;
     bool _isLoading = isLoading ?? false;
+    bool _isIcon = isIcon ?? false;
 
     return GestureDetector(
       onTap: onPressed,
@@ -20,7 +25,7 @@ class CustomBtn extends StatelessWidget {
         height: 55.0,
         width: MediaQuery.of(context).size.width/ 1.24,
         decoration: BoxDecoration(
-          color: _outlineBtn ? Colors.transparent : whiteThemeColor,
+          color: _outlineBtn ? Colors.transparent : color,
           border: Border.all(
             color: whiteThemeColor,
             width: 2.0,
@@ -38,14 +43,21 @@ class CustomBtn extends StatelessWidget {
             Visibility(
               visible: _isLoading ? false : true,
               child: Center(
-                child: Text(
-                  text ?? "Text",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: _outlineBtn ?  Colors.white :Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _isIcon ? FaIcon(icon, color: whiteThemeColor, ) : const Text(''),
+                    const SizedBox(width: 12.0,),
+                    Text(
+                      text ?? "Text",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: _outlineBtn ?  Colors.white :textColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                )
               ),
             ),
             Visibility(
