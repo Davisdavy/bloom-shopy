@@ -121,6 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const CustomInput(
               labelText: "Password",
+              isPasswordField: true,
               forgotText: "Forgot?",
             ),
             const SizedBox(

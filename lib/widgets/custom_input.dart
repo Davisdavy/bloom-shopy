@@ -33,8 +33,8 @@ class CustomInput extends StatelessWidget {
         onChanged: onChanged,
         onSubmitted: onSubmitted,
         textInputAction: textInputAction,
-        decoration: InputDecoration(
 
+        decoration: InputDecoration(
             enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: grey, width: 1.0),
 
