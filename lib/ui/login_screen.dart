@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Icon(
                             Icons.arrow_back_ios,
                             color: whiteThemeColor,
-                            size: 13.0,
+                            size: 16.0,
                           ),
                         ),
                         Material(

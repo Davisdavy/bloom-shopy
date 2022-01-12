@@ -1,6 +1,8 @@
 import 'package:bloom/preferences/colors.dart';
+import 'package:bloom/ui/discover_screen.dart';
 import 'package:bloom/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -75,11 +77,13 @@ class _HomeTabState extends State<HomeTab> {
                           height: 10.0,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, PageTransition(child: const DiscoverScreen(), type: PageTransitionType.rightToLeft));
+                          },
                           child: Row(
                             children: const [
                               Text(
-                                "DISCOVER ",
+                                "DISCOVER",
                                 style: TextStyle(
                                     color: whiteThemeColor,
                                     fontSize: 13.0,
