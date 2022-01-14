@@ -1,5 +1,4 @@
 import 'package:bloom/preferences/colors.dart';
-import 'package:bloom/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverScreen extends StatefulWidget {
@@ -78,36 +77,199 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
             )
           ],
         ),
-        body: Column(children: [
-          ListView(
-              physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.only(
-                  top: 20.0,),
-              scrollDirection: Axis.horizontal,
-              children: [
-            GestureDetector(
-              onTap: () {},
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 80,
-                      width: 80,
-                      margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.contain,
-                          image: AssetImage(
-                            "assets/images/user.png",
-                          ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14.0),
+            child: Column(children: [
+              SizedBox(
+                height: 110,
+                child: ListView(
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    padding: const EdgeInsets.only(
+                      top: 20.0,
+                    ),
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      fit: BoxFit.contain,
+                                      image: AssetImage(
+                                        "assets/images/user.png",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                               const Text(
+                                  "Accessories",
+                                  style: TextStyle(
+                                    color: black,
+                                    fontSize: 11.0,
+                                  ),
+                                )
+                              ]),
                         ),
                       ),
-                    ),
-                  ]),
-            )
-          ])
-        ]));
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        "assets/images/dress.png",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                const Text(
+                                   "Dresses",
+                                   style: TextStyle(
+                                     color: black,
+                                     fontSize: 11.0,
+                                   ),
+                                 )
+                              ]),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        "assets/images/jacket.png",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                const Text(
+                                  "Coats",
+                                  style: TextStyle(
+                                    color: black,
+                                    fontSize: 11.0,
+                                  ),
+                                )
+                              ]),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        "assets/images/newDenim.png",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                const Text(
+                                  "Denim",
+                                  style: TextStyle(
+                                    color: black,
+                                    fontSize: 11.0,
+                                  ),
+                                )
+                              ]),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 2.0),
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                        "assets/images/handbag.png",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                const Text(
+                                  "Handbags",
+                                  style: TextStyle(
+                                    color: black,
+                                    fontSize: 11.0,
+                                  ),
+                                )
+                              ]),
+                        ),
+                      ),
+                    ]),
+              )
+            ]),
+          ),
+        ));
   }
 }
