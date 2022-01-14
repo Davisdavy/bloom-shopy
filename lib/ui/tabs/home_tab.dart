@@ -78,7 +78,7 @@ class _HomeTabState extends State<HomeTab> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.push(context, PageTransition(child: const DiscoverScreen(), type: PageTransitionType.rightToLeft));
+                            // Navigator.push(context, PageTransition(child: const CollectionScreen(), type: PageTransitionType.rightToLeft));
                           },
                           child: Row(
                             children: const [
@@ -153,7 +153,9 @@ class _HomeTabState extends State<HomeTab> {
                     scrollDirection: Axis.horizontal,
                     children: [
                       GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, PageTransition(child: const DiscoverScreen(), type: PageTransitionType.rightToLeft));
+                          },
                           child: Stack(
                             children: [
                               Container(
