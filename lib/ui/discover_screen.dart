@@ -398,7 +398,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                             child: Stack(
                                 children: [
                                   Container(
-                                    height: 320,
+                                    height: 321,
                                     width: MediaQuery.of(context).size.width,
                                     margin: const EdgeInsets.symmetric(
                                         horizontal: 2.0),
@@ -413,7 +413,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                                     ),
                                   ),
                                   const  Positioned(
-                                    top: 250.0,
+                                    top: 251.0,
                                     left: 20.0,
                                     child:  Text(
                                       "Accessories",
