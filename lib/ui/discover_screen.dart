@@ -370,7 +370,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                                     left: 20.0,
                                     child:  Text(
                                       "Denim",
-                                      style: TextStyle(
+                                       style: TextStyle(
                                         color:  whiteThemeColor,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20.0,
