@@ -1,4 +1,5 @@
 import 'package:bloom/preferences/colors.dart';
+import 'package:bloom/ui/reset_screen.dart';
 import 'package:bloom/widgets/bottom_navigation.dart';
 import 'package:bloom/widgets/custom_btn.dart';
 import 'package:bloom/widgets/custom_input.dart';
@@ -97,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Padding(
                         padding: EdgeInsets.only(left: 38.0),
                         child: Text(
-                          "you account",
+                          "your account",
                           style: TextStyle(
                               color: whiteThemeColor,
                               fontSize: 30.0,
@@ -122,7 +123,6 @@ class _LoginScreenState extends State<LoginScreen> {
             const CustomInput(
               labelText: "Password",
               isPasswordField: true,
-              forgotText: "Forgot?",
             ),
             const SizedBox(
               height: 10.0,
@@ -130,17 +130,38 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Transform.scale(
-                    scale: 0.9,
-                    child: Checkbox(
-                        activeColor: black, value: true, onChanged: (value) {}),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Transform.scale(
+                        scale: 0.9,
+                        child: Checkbox(
+                            activeColor: black, value: true, onChanged: (value) {}),
+                      ),
+                      const Text(
+                        "Remember Me",
+                        style: TextStyle(color: black, fontSize: 14),
+                      )
+                    ],
                   ),
-                  const Text(
-                    "Remember Me",
-                    style: TextStyle(color: black, fontSize: 14),
-                  )
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const ResetScreen(),
+                                type: PageTransitionType.topToBottom));
+                      },
+                      child:const  Padding(
+                        padding:  EdgeInsets.only(right: 40.0),
+                        child: Text(
+                          "Forgot?" ,
+                          style:  TextStyle(
+                              fontSize: 14.0, fontWeight: FontWeight.w400),
+                        ),
+                      ))
                 ],
               ),
             ),
