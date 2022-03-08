@@ -67,7 +67,7 @@ class _HomeTabState extends State<HomeTab> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "Winter collection",
+                          "Collections",
                           style: TextStyle(
                               color: whiteThemeColor,
                               fontSize: 30.0,
@@ -78,7 +78,7 @@ class _HomeTabState extends State<HomeTab> {
                         ),
                         InkWell(
                           onTap: () {
-                            // Navigator.push(context, PageTransition(child: const CollectionScreen(), type: PageTransitionType.rightToLeft));
+                             // Navigator.push(context, PageTransition(child: const DiscoverScreen(), type: PageTransitionType.rightToLeft));
                           },
                           child: Row(
                             children: const [
@@ -154,7 +154,7 @@ class _HomeTabState extends State<HomeTab> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            Navigator.push(context, PageTransition(child: const DiscoverScreen(), type: PageTransitionType.rightToLeft));
+
                           },
                           child: Stack(
                             children: [

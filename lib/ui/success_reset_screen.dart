@@ -1,10 +1,7 @@
 import 'package:bloom/preferences/colors.dart';
 import 'package:bloom/ui/login_screen.dart';
-import 'package:bloom/widgets/bottom_navigation.dart';
 import 'package:bloom/widgets/custom_btn.dart';
-import 'package:bloom/widgets/custom_input.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SuccessResetScreen extends StatefulWidget {
@@ -149,7 +146,7 @@ class _SuccessResetScreenState extends State<SuccessResetScreen> {
                             child: Text(
                               "Your password has been reset!",
                               style: TextStyle(
-                                  color: black, height: 1.4, fontSize: 14),
+                                  color: grey, height: 1.4, fontSize: 14),
                             ),
                           ),
                         ],
